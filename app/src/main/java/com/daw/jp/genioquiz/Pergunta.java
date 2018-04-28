@@ -12,9 +12,9 @@ public class Pergunta {
     private String alt2;
     private String alt3;
     private String alt4;
-    private ArrayList<Integer> corretas;
+    private ArrayList<Boolean> corretas;
 
-    public Pergunta(String pergunta, String alt1, String alt2, String alt3, String alt4, ArrayList<Integer> corretas) {
+    public Pergunta(String pergunta, String alt1, String alt2, String alt3, String alt4, ArrayList<Boolean> corretas) {
         this.pergunta = pergunta;
         this.alt1 = alt1;
         this.alt2 = alt2;
@@ -63,11 +63,11 @@ public class Pergunta {
         this.alt4 = alt4;
     }
 
-    public ArrayList<Integer> getCorretas() {
+    public ArrayList<Boolean> getCorretas() {
         return corretas;
     }
 
-    public void setCorretas(ArrayList<Integer> corretas) {
+    public void setCorretas(ArrayList<Boolean> corretas) {
         this.corretas = corretas;
     }
 }

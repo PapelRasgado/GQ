@@ -2,10 +2,6 @@ package com.daw.jp.genioquiz;
 
 import java.util.ArrayList;
 
-/**
- * Created by Aluno on 27/04/2018.
- */
-
 public class Pergunta {
     private String pergunta;
     private String alt1;

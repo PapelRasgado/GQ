@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -23,10 +24,10 @@ public class TelaPergunta extends AppCompatActivity {
 
     private TextView titulo;
     private TextView pergunta;
-    private RadioButton a1;
-    private RadioButton a2;
-    private RadioButton a3;
-    private RadioButton a4;
+    private CheckBox a1;
+    private CheckBox a2;
+    private CheckBox a3;
+    private CheckBox a4;
     private Button enviar;
 
 
@@ -70,12 +71,18 @@ public class TelaPergunta extends AppCompatActivity {
     }
 
     private void terminarPergunta() {
-        int valor = gp.verificarResposta(a1.isChecked(), a2.isChecked(), a3.isChecked(), a4.isChecked());
-        pontos += valor;
-
 
         LayoutInflater inflater = TelaPergunta.this.getLayoutInflater();
         View conView = inflater.inflate(R.layout.layout_resultado, null);
+
+        TextView pont1 = conView.findViewById(R.id.txt_pont1);
+        TextView pont2 = conView.findViewById(R.id.txt_pont2);
+        TextView pont3 = conView.findViewById(R.id.txt_pont3);
+        TextView pont4 = conView.findViewById(R.id.txt_pont4);
+        int valor = gp.verificarResposta(a1.isChecked(), pont1, a2.isChecked(), pont2, a3.isChecked(), pont3, a4.isChecked(), pont4);
+        pontos += valor;
+
+
         TextView usu1 = conView.findViewById(R.id.txt_resu_color1);
         mudaCor(usu1, a1.isChecked());
 
@@ -88,21 +95,18 @@ public class TelaPergunta extends AppCompatActivity {
         TextView usu4 = conView.findViewById(R.id.txt_resu_color4);
         mudaCor(usu4, a4.isChecked());
 
+
         TextView resp1 = conView.findViewById(R.id.txt_resu_resp1);
-        resp1.setText(atual.getAlt1());
-        mudaCor(resp1, atual.getCorretas().get(0));
+        mudaCor(resp1, atual.getCorretas().get(0), atual.getAlt1());
 
         TextView resp2 = conView.findViewById(R.id.txt_resu_resp2);
-        resp2.setText(atual.getAlt2());
-        mudaCor(resp2, atual.getCorretas().get(1));
+        mudaCor(resp2, atual.getCorretas().get(1), atual.getAlt2());
 
         TextView resp3 = conView.findViewById(R.id.txt_resu_resp3);
-        resp3.setText(atual.getAlt3());
-        mudaCor(resp3, atual.getCorretas().get(2));
+        mudaCor(resp3, atual.getCorretas().get(2), atual.getAlt3());
 
         TextView resp4 = conView.findViewById(R.id.txt_resu_resp4);
-        resp4.setText(atual.getAlt4());
-        mudaCor(resp4, atual.getCorretas().get(3));
+        mudaCor(resp4, atual.getCorretas().get(3), atual.getAlt4());
 
         TextView txt = conView.findViewById(R.id.txt_resu_resu);
         txt.setText("Resultado: " + valor);
@@ -123,6 +127,16 @@ public class TelaPergunta extends AppCompatActivity {
                 })
                 .show();
         cont++;
+    }
+
+    private void mudaCor(TextView txt, boolean teste, String texto) {
+        if (teste) {
+            txt.setBackgroundResource(R.color.green);
+            txt.setText(texto);
+        } else {
+            txt.setBackgroundResource(R.color.red);
+            txt.setText(texto);
+        }
     }
 
     private void mudaCor(TextView txt, boolean teste) {

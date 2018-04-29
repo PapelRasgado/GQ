@@ -1,5 +1,7 @@
 package com.daw.jp.genioquiz;
 
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -11,10 +13,10 @@ public class GerenciadorPergunta {
         perguntas = new ArrayList<>();
         ArrayList<Boolean> valores = new ArrayList<Boolean>() {
             {
-                add(false);
                 add(true);
                 add(false);
                 add(true);
+                add(false);
             }
         };
         perguntas.add(new Pergunta("(Nanatsu No Taizai) Qual desses são Pecados?", "Meliodas", "Zeldris", "Diane", "Hawk", valores));
@@ -85,20 +87,11 @@ public class GerenciadorPergunta {
             {
                 add(false);
                 add(false);
-                add(false);
-                add(true);
-            }
-        };
-        perguntas.add(new Pergunta("(Cavaleiros do Zodiaco) Qual dos Cavaleiros de Bronze era a reencarnação do deus Hades na Saga do Inferno?", "Seiya", "Ikki", "Shion", "Shun", valores));
-        valores = new ArrayList<Boolean>() {
-            {
-                add(false);
-                add(false);
                 add(true);
                 add(true);
             }
         };
-        perguntas.add(new Pergunta("(Caveleiros do Zodiaco) Na mangá Episodio G que conta a historia dos Caveleiros de Ouro, quais desses golpes pertencem a Aiolia de Leão?", "Colera do Dragãpo", "Meteoro de Pegasus", "Relampago de Plasma", "Photon Burst", valores));
+        perguntas.add(new Pergunta("(Caveleiros do Zodiaco) Na mangá Episodio G que conta a historia dos Caveleiros de Ouro, quais desses golpes pertencem a Aiolia de Leão?", "Colera do Dragão", "Meteoro de Pegasus", "Relampago de Plasma", "Photon Burst", valores));
         valores = new ArrayList<Boolean>() {
             {
                 add(true);
@@ -117,24 +110,6 @@ public class GerenciadorPergunta {
             }
         };
         perguntas.add(new Pergunta("(Sword Art Online) Qual as espadas usada por Kirito?", "Excalibur", "Hasagi", "Elucidator", "Dark Repulser", valores));
-        valores = new ArrayList<Boolean>() {
-            {
-                add(true);
-                add(false);
-                add(false);
-                add(false);
-            }
-        };
-        perguntas.add(new Pergunta("(Cavaleiros Do Zodiaco) Qual o Cavaleiro de Ouro que recebeu a benção do Misopotâmenos (Benção dada pelos deuses e retarda o envelhecimento)?", "Dohko de Libra", "Shura de Capricornio", "Aldebaran de Touro", "Shaka de Virgem", valores));
-        valores = new ArrayList<Boolean>() {
-            {
-                add(false);
-                add(true);
-                add(false);
-                add(false);
-            }
-        };
-        perguntas.add(new Pergunta("(Cavaleiros Do Zodiaco) Qual o Cavaleiro de Ouro que representa 'O pacifico carneiro que cavalga entre as estrelas' e possui poderes psiquicos?", "Aioros de Sagitario", "Mú de Aries", "Saga de Gêmeos", "Manigold de Cancer", valores));
         valores = new ArrayList<Boolean>() {
             {
                 add(false);
@@ -156,26 +131,47 @@ public class GerenciadorPergunta {
 
     }
 
-    public Pergunta novaPergunta(){
+    public Pergunta novaPergunta() {
         int local = new Random().nextInt(perguntas.size());
         this.atual = perguntas.remove(local);
         return this.atual;
     }
 
-    public int verificarResposta(boolean r1, boolean r2, boolean r3, boolean r4){
+    public int verificarResposta(boolean r1, TextView pont1, boolean r2, TextView pont2, boolean r3, TextView pont3, boolean r4, TextView pont4) {
         int cont = 0;
-        if (atual.getCorretas().get(0).equals(r1)){
+        if (atual.getCorretas().get(0).equals(r1)) {
             cont += 5;
+            pont1.setText("+5");
+        } else {
+            cont -= 5;
+            pont1.setText("-5");
         }
-        if (atual.getCorretas().get(1).equals(r2)){
+        if (atual.getCorretas().get(1).equals(r2)) {
             cont += 5;
+            pont2.setText("+5");
+        } else {
+            cont -= 5;
+            pont2.setText("-5");
         }
-        if (atual.getCorretas().get(2).equals(r3)){
+        if (atual.getCorretas().get(2).equals(r3)) {
             cont += 5;
+            pont3.setText("+5");
+        } else {
+            cont -= 5;
+            pont3.setText("-5");
         }
-        if (atual.getCorretas().get(3).equals(r4)){
+        if (atual.getCorretas().get(3).equals(r4)) {
             cont += 5;
+            pont4.setText("+5");
+        } else {
+            cont -= 5;
+            pont4.setText("-5");
         }
-        return cont;
+        if (cont > 0){
+            return cont;
+        } else {
+            return 0;
+        }
+
     }
 }

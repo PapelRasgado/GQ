@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GenioQuiz</string>
+    <string name="title_activity_tela_creditos">TelaCreditos</string>
 </resources>

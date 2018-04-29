@@ -152,28 +152,119 @@ public class GerenciadorPergunta {
                 add(true);
             }
         };
-        perguntas.add(new Pergunta("(Cavaleiros Do Zodiaco) Quantas armaduras do Santuario (Bronze, Prata e Ouro) provem de constelações oficiais no anime e no mangá??", "17", "88", "99", "124", valores));
+        perguntas.add(new Pergunta("(Cavaleiros Do Zodiaco) Quantas armaduras do Santuario (Bronze, Prata e Ouro) provem de constelações oficiais no anime e no mangá?", "17", "88", "99", "124", valores));
+        valores = new ArrayList<Boolean>() {
+            {
+                add(false);
+                add(true);
+                add(true);
+                add(false);
+            }
+        };
+        perguntas.add(new Pergunta("(Fullmetal Alchemist Brotherhood) Depois de uma transmutação humana para reviver sua mãe, Edward perde quais partes de seu corpo?", "Olhos", "Braço Direito", "Perna esquerda", "Os dois braços", valores));
+        valores = new ArrayList<Boolean>() {
+            {
+                add(true);
+                add(false);
+                add(false);
+                add(true);
+            }
+        };
+        perguntas.add(new Pergunta("(Fullmetal Alchemist Brotherhood) Quais os nomes dos personagens principais, os irmãos:", "Edward Elric", "Edward Stark", "Alphonse Stark", "Alphonse Elric", valores));
+        valores = new ArrayList<Boolean>() {
+            {
+                add(false);
+                add(false);
+                add(false);
+                add(true);
+            }
+        };
+        perguntas.add(new Pergunta("(Fullmetal Alchemist Brotherhood) Os homúnculos são baseados nos: ", "Dez mandamentos", "Sete pragas", "Sete monstrinhos", "Sete pecados capitais", valores));
+        valores = new ArrayList<Boolean>() {
+            {
+                add(false);
+                add(false);
+                add(true);
+                add(false);
+            }
+        };
+        perguntas.add(new Pergunta("(Fullmetal Alchemist Brotherhood) O que o Alquimista da Trama Vital, Shou Tucker criou a partir de sua filha e seu cachorro? ", "Um lunpa-lunpa", "Um híbrido", "Uma quimera", "Uma chinforinfola", valores));
+        valores = new ArrayList<Boolean>() {
+            {
+                add(false);
+                add(true);
+                add(false);
+                add(false);
+            }
+        };
+        perguntas.add(new Pergunta("(Fullmetal Alchemist Brotherhood) O Alquimista das Chamas, Roy Mustang,possui seu nome baseado em: ", "Helicóptero Mi-28 Mustang ", "Caça norte americano P-51 Mustang", "Caça asiático P-90 Mustang", "M1A1 Thompson Mustang", valores));
+        valores = new ArrayList<Boolean>() {
+            {
+                add(false);
+                add(false);
+                add(true);
+                add(false);
+            }
+        };
+        perguntas.add(new Pergunta("(Naruto) Quais ninjas estavam no comando de todo plano executado por trás da grande guerra ninja: ", "Uchiha Madara", "Uchiha Obito", "Zetsu", "Orochimaru", valores));
+        valores = new ArrayList<Boolean>() {
+            {
+                add(true);
+                add(true);
+                add(false);
+                add(true);
+            }
+        };
+        perguntas.add(new Pergunta("(Naruto) Quais desses foram hokages:", "Tobirama Senju", "Hiruzen Sarutobi", "Jiraiya Monogatari", "Kakashi Hatake", valores));
+        valores = new ArrayList<Boolean>() {
+            {
+                add(false);
+                add(true);
+                add(true);
+                add(true);
+            }
+        };
+        perguntas.add(new Pergunta("(Naruto) Quais desses personagens fazem parte do grupo Akatsuki:", "Kabuto Yakushi", "Kisame Hoshigaki", "Nagato", "Zetsu", valores));
+        valores = new ArrayList<Boolean>() {
+            {
+                add(true);
+                add(false);
+                add(false);
+                add(false);
+            }
+        };
+        perguntas.add(new Pergunta("(Naruto) Quais dessas técnicas pertence a Naruto:", "Rasengan", "Amaterasu", "Yasaka Magatama", "Jutsu Sarrada das Sombras", valores));
+        valores = new ArrayList<Boolean>() {
+            {
+                add(true);
+                add(true);
+                add(false);
+                add(false);
+            }
+        };
+        perguntas.add(new Pergunta("(Naruto) Quais desses ninjas são Jinchuurikis:", "Yugito Nii", "Utakata", "Uraraka", "Kisame Hoshigaki", valores));
+
 
     }
 
-    public Pergunta novaPergunta(){
+    public Pergunta novaPergunta() {
         int local = new Random().nextInt(perguntas.size());
         this.atual = perguntas.remove(local);
         return this.atual;
     }
 
-    public int verificarResposta(boolean r1, boolean r2, boolean r3, boolean r4){
+    public int verificarResposta(boolean r1, boolean r2, boolean r3, boolean r4) {
         int cont = 0;
-        if (atual.getCorretas().get(0).equals(r1)){
+        if (atual.getCorretas().get(0).equals(r1)) {
             cont += 5;
         }
-        if (atual.getCorretas().get(1).equals(r2)){
+        if (atual.getCorretas().get(1).equals(r2)) {
             cont += 5;
         }
-        if (atual.getCorretas().get(2).equals(r3)){
+        if (atual.getCorretas().get(2).equals(r3)) {
             cont += 5;
         }
-        if (atual.getCorretas().get(3).equals(r4)){
+        if (atual.getCorretas().get(3).equals(r4)) {
             cont += 5;
         }
         return cont;

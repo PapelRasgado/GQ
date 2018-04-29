@@ -16,7 +16,6 @@ public class TelaPergunta extends AppCompatActivity {
     private int pontos = 0;
     private Pergunta atual;
     private GerenciadorPergunta gp;
-
     private TextView titulo;
     private TextView pergunta;
     private RadioButton a1;
@@ -45,7 +44,7 @@ public class TelaPergunta extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 terminarPergunta();
-                if (cont <= 5){
+                if (cont <= 5) {
                     comecarPergunta();
                 } else {
                     // fazer tela de termino //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,7 +55,7 @@ public class TelaPergunta extends AppCompatActivity {
         comecarPergunta();
     }
 
-    private void comecarPergunta(){
+    private void comecarPergunta() {
         atual = gp.novaPergunta();
         titulo.setText("Pergunta " + cont);
         pergunta.setText(atual.getPergunta());
@@ -68,6 +67,6 @@ public class TelaPergunta extends AppCompatActivity {
 
     private void terminarPergunta() {
         pontos += gp.verificarResposta(a1.isChecked(), a2.isChecked(), a3.isChecked(), a4.isChecked());
-        cont ++;
+        cont++;
     }
 }

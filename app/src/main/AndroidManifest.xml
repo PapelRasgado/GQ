@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TelaPergunta"/>
+        <activity android:name=".TelaPergunta" />
+        <activity
+            android:name=".TelaCreditos"
+            android:label="@string/title_activity_tela_creditos"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

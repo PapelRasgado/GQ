@@ -49,26 +49,24 @@ public class TelaPergunta extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 terminarPergunta();
-                if (cont <= 5){
-                    comecarPergunta();
-                } else {
-                    Intent it = new Intent(v.getContext() ,TelaFinal.class);
-                    it.putExtra("pontuacao", pontos);
-                }
             }
         });
 
         comecarPergunta();
     }
 
-    private void comecarPergunta(){
+    private void comecarPergunta() {
         atual = gp.novaPergunta();
         titulo.setText("Pergunta " + cont);
         pergunta.setText(atual.getPergunta());
         a1.setText(atual.getAlt1());
+        a1.setChecked(false);
         a2.setText(atual.getAlt2());
+        a2.setChecked(false);
         a3.setText(atual.getAlt3());
+        a3.setChecked(false);
         a4.setText(atual.getAlt4());
+        a4.setChecked(false);
     }
 
     private void terminarPergunta() {
@@ -95,32 +93,40 @@ public class TelaPergunta extends AppCompatActivity {
         mudaCor(resp1, atual.getCorretas().get(0));
 
         TextView resp2 = conView.findViewById(R.id.txt_resu_resp2);
-        resp1.setText(atual.getAlt2());
+        resp2.setText(atual.getAlt2());
         mudaCor(resp2, atual.getCorretas().get(1));
 
         TextView resp3 = conView.findViewById(R.id.txt_resu_resp3);
+        resp3.setText(atual.getAlt3());
         mudaCor(resp3, atual.getCorretas().get(2));
 
         TextView resp4 = conView.findViewById(R.id.txt_resu_resp4);
+        resp4.setText(atual.getAlt4());
         mudaCor(resp4, atual.getCorretas().get(3));
 
         TextView txt = conView.findViewById(R.id.txt_resu_resu);
         txt.setText("Resultado: " + valor);
 
-        new AlertDialog.Builder(getApplicationContext())
+        new AlertDialog.Builder(TelaPergunta.this)
                 .setView(conView)
                 .setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        //vai pra proxima questão
+                        if (cont <= 5) {
+                            comecarPergunta();
+                        } else {
+                            Intent it = new Intent(TelaPergunta.this, TelaFinal.class);
+                            it.putExtra("pontuacao", pontos);
+                            startActivity(it);
+                        }
 
                     }
                 })
                 .show();
-        cont ++;
+        cont++;
     }
 
-    private void mudaCor(TextView txt, boolean teste){
-        if (teste){
+    private void mudaCor(TextView txt, boolean teste) {
+        if (teste) {
             txt.setBackgroundResource(R.color.green);
         } else {
             txt.setBackgroundResource(R.color.red);

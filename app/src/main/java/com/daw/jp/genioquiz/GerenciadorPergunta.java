@@ -110,13 +110,13 @@ public class GerenciadorPergunta {
         perguntas.add(new Pergunta("(Caveleiros do Zodiaco) Na Saga do Inferno quais são os deuses do sono e da morte que auxiliam Hades?", "Thanatos", "Morpheus", "Hypnos", "Lucifer", valores));
         valores = new ArrayList<Boolean>() {
             {
-                add(false);
-                add(false);
                 add(true);
                 add(false);
+                add(true);
+                add(true);
             }
         };
-        perguntas.add(new Pergunta("(Sword Art Online) Qual o nome da principal espada usada por Kirito?", "Excalibur", "Hasagi", "Elucidator", "Dark Repulser", valores));
+        perguntas.add(new Pergunta("(Sword Art Online) Qual as espadas usada por Kirito?", "Excalibur", "Hasagi", "Elucidator", "Dark Repulser", valores));
         valores = new ArrayList<Boolean>() {
             {
                 add(true);

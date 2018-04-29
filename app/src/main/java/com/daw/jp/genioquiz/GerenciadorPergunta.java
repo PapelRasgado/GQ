@@ -1,7 +1,9 @@
 package com.daw.jp.genioquiz;
 
+import android.os.Parcelable;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -124,7 +126,7 @@ public class GerenciadorPergunta {
                 add(false);
                 add(true);
                 add(false);
-                add(true);
+                add(false);
             }
         };
         perguntas.add(new Pergunta("(Cavaleiros Do Zodiaco) Quantas armaduras do Santuario (Bronze, Prata e Ouro) provem de constelações oficiais no anime e no mangá??", "17", "88", "99", "124", valores));

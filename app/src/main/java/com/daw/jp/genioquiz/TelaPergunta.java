@@ -56,6 +56,12 @@ public class TelaPergunta extends AppCompatActivity {
         comecarPergunta();
     }
 
+//    @Override
+//    public void onSaveInstanceState(Bundle estadoDeSaida) {            dasmd bkjasdhjas ideas de como virar a aparda e manter as coisasdsakdfaçpsuj dedf
+//        super.onSaveInstanceState(estadoDeSaida);
+//        estadoDeSaida.putParcelable("meuGerenciador", gp);
+//    }
+
     private void comecarPergunta() {
         atual = gp.novaPergunta();
         titulo.setText("Pergunta " + cont);

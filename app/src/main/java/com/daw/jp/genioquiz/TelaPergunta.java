@@ -9,12 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
-/**
- * Created by Aluno on 27/04/2018.
- */
 
 public class TelaPergunta extends AppCompatActivity {
     private int cont = 1;

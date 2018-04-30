@@ -1,5 +1,7 @@
 package com.daw.jp.genioquiz;
 
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -11,10 +13,10 @@ public class GerenciadorPergunta {
         perguntas = new ArrayList<>();
         ArrayList<Boolean> valores = new ArrayList<Boolean>() {
             {
-                add(false);
                 add(true);
                 add(false);
                 add(true);
+                add(false);
             }
         };
         perguntas.add(new Pergunta("(Nanatsu No Taizai) Qual desses são Pecados?", "Meliodas", "Zeldris", "Diane", "Hawk", valores));
@@ -85,15 +87,6 @@ public class GerenciadorPergunta {
             {
                 add(false);
                 add(false);
-                add(false);
-                add(true);
-            }
-        };
-        perguntas.add(new Pergunta("(Cavaleiros do Zodiaco) Qual dos Cavaleiros de Bronze era a reencarnação do deus Hades na Saga do Inferno?", "Seiya", "Ikki", "Shion", "Shun", valores));
-        valores = new ArrayList<Boolean>() {
-            {
-                add(false);
-                add(false);
                 add(true);
                 add(true);
             }
@@ -110,22 +103,13 @@ public class GerenciadorPergunta {
         perguntas.add(new Pergunta("(Caveleiros do Zodiaco) Na Saga do Inferno quais são os deuses do sono e da morte que auxiliam Hades?", "Thanatos", "Morpheus", "Hypnos", "Lucifer", valores));
         valores = new ArrayList<Boolean>() {
             {
-                add(false);
-                add(false);
                 add(true);
                 add(false);
-            }
-        };
-        perguntas.add(new Pergunta("(Sword Art Online) Qual o nome da principal espada usada por Kirito?", "Excalibur", "Hasagi", "Elucidator", "Dark Repulser", valores));
-        valores = new ArrayList<Boolean>() {
-            {
                 add(true);
-                add(false);
-                add(false);
-                add(false);
+                add(true);
             }
         };
-        perguntas.add(new Pergunta("(Cavaleiros Do Zodiaco) Qual o Cavaleiro de Ouro que recebeu a benção do Misopotâmenos (Benção dada pelos deuses e retarda o envelhecimento)?", "Dohko de Libra", "Shura de Capricornio", "Aldebaran de Touro", "Shaka de Virgem", valores));
+        perguntas.add(new Pergunta("(Sword Art Online) Qual as espadas usadas por Kirito?", "Excalibur", "Hasagi", "Elucidator", "Dark Repulser", valores));
         valores = new ArrayList<Boolean>() {
             {
                 add(false);
@@ -149,7 +133,7 @@ public class GerenciadorPergunta {
                 add(false);
                 add(true);
                 add(false);
-                add(true);
+                add(false);
             }
         };
         perguntas.add(new Pergunta("(Cavaleiros Do Zodiaco) Quantas armaduras do Santuario (Bronze, Prata e Ouro) provem de constelações oficiais no anime e no mangá?", "17", "88", "99", "124", valores));
@@ -253,20 +237,41 @@ public class GerenciadorPergunta {
         return this.atual;
     }
 
-    public int verificarResposta(boolean r1, boolean r2, boolean r3, boolean r4) {
+    public int verificarResposta(boolean r1, TextView pont1, boolean r2, TextView pont2, boolean r3, TextView pont3, boolean r4, TextView pont4) {
         int cont = 0;
         if (atual.getCorretas().get(0).equals(r1)) {
             cont += 5;
+            pont1.setText("+5");
+        } else {
+            cont -= 5;
+            pont1.setText("-5");
         }
         if (atual.getCorretas().get(1).equals(r2)) {
             cont += 5;
+            pont2.setText("+5");
+        } else {
+            cont -= 5;
+            pont2.setText("-5");
         }
         if (atual.getCorretas().get(2).equals(r3)) {
             cont += 5;
+            pont3.setText("+5");
+        } else {
+            cont -= 5;
+            pont3.setText("-5");
         }
         if (atual.getCorretas().get(3).equals(r4)) {
             cont += 5;
+            pont4.setText("+5");
+        } else {
+            cont -= 5;
+            pont4.setText("-5");
         }
-        return cont;
+        if (cont > 0){
+            return cont;
+        } else {
+            return 0;
+        }
+
     }
 }

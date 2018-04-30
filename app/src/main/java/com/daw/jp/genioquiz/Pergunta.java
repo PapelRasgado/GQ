@@ -4,19 +4,29 @@ import java.util.ArrayList;
 
 public class Pergunta {
     private String pergunta;
+    private int anime;
     private String alt1;
     private String alt2;
     private String alt3;
     private String alt4;
     private ArrayList<Boolean> corretas;
 
-    public Pergunta(String pergunta, String alt1, String alt2, String alt3, String alt4, ArrayList<Boolean> corretas) {
+    public Pergunta(String pergunta, int anime, String alt1, String alt2, String alt3, String alt4, ArrayList<Boolean> corretas) {
         this.pergunta = pergunta;
+        this.anime = anime;
         this.alt1 = alt1;
         this.alt2 = alt2;
         this.alt3 = alt3;
         this.alt4 = alt4;
         this.corretas = corretas;
+    }
+
+    public int getAnime() {
+        return anime;
+    }
+
+    public void setAnime(int anime) {
+        this.anime = anime;
     }
 
     public String getPergunta() {

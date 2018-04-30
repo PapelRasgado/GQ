@@ -9,7 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 
 public class TelaPergunta extends AppCompatActivity {
@@ -24,6 +27,7 @@ public class TelaPergunta extends AppCompatActivity {
     private CheckBox a2;
     private CheckBox a3;
     private CheckBox a4;
+    private ImageView logo;
     private Button enviar;
 
 
@@ -41,6 +45,7 @@ public class TelaPergunta extends AppCompatActivity {
         a3 = findViewById(R.id.rdo3);
         a4 = findViewById(R.id.rdo4);
         enviar = findViewById(R.id.btn_send);
+        logo = findViewById(R.id.img_anime);
 
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,11 +57,6 @@ public class TelaPergunta extends AppCompatActivity {
         comecarPergunta();
     }
 
-//    @Override
-//    public void onSaveInstanceState(Bundle estadoDeSaida) {            dasmd bkjasdhjas ideas de como virar a aparda e manter as coisasdsakdfaçpsuj dedf
-//        super.onSaveInstanceState(estadoDeSaida);
-//        estadoDeSaida.putParcelable("meuGerenciador", gp);
-//    }
 
     private void comecarPergunta() {
         atual = gp.novaPergunta();
@@ -70,6 +70,38 @@ public class TelaPergunta extends AppCompatActivity {
         a3.setChecked(false);
         a4.setText(atual.getAlt4());
         a4.setChecked(false);
+        switch (atual.getAnime()){
+            case 0:
+                Glide.with(getApplicationContext())
+                        .load(R.drawable.nanatsu)
+                        .into(logo);
+                break;
+            case 1:
+                Glide.with(getApplicationContext())
+                        .load(R.drawable.boku)
+                        .into(logo);
+                break;
+            case 2:
+                Glide.with(getApplicationContext())
+                        .load(R.drawable.cdz)
+                        .into(logo);
+                break;
+            case 3:
+                Glide.with(getApplicationContext())
+                        .load(R.drawable.sao)
+                        .into(logo);
+                break;
+            case 4:
+                Glide.with(getApplicationContext())
+                        .load(R.drawable.fullmetal)
+                        .into(logo);
+                break;
+            case 5:
+                Glide.with(getApplicationContext())
+                        .load(R.drawable.naruto)
+                        .into(logo);
+                break;
+        }
     }
 
     private void terminarPergunta() {

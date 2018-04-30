@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it1 = new Intent(v.getContext(), TelaCreditos.class);
+                startActivity(it1);
             }
         });
     }

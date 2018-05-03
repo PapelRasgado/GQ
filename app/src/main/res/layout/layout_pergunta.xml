@@ -26,13 +26,13 @@
     <TextView
         android:id="@+id/txt_pergunta"
         android:layout_width="0dp"
-        android:layout_height="67dp"
+        android:layout_height="110dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/finger_paint"
-        android:text="Pergunta"
+        android:text="(Caveleiros do Zodiaco) Na mangá Episodio G que conta a historia dos Caveleiros de Ouro, quais desses golpes pertencem a Aiolia de Leão?"
         android:textColor="@android:color/background_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,18 +129,18 @@
 
     <ImageView
         android:id="@+id/img_anime"
-        android:layout_width="67dp"
-        android:layout_height="67dp"
+        android:layout_width="109dp"
+        android:layout_height="109dp"
         android:layout_marginBottom="60dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/rdo1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.985" />
 
     <TextView
         android:id="@+id/textView6"

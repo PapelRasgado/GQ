@@ -7,13 +7,15 @@
 
     <TextView
         android:id="@+id/txt_resu_resp3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="129dp"
+        android:layout_height="31dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="19dp"
+        android:gravity="center_vertical"
         android:text="Alternativa 3"
+        android:fontFamily="@font/finger_paint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.023"
@@ -38,13 +40,15 @@
 
     <TextView
         android:id="@+id/txt_resu_resp4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="129dp"
+        android:layout_height="31dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/finger_paint"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:text="Alternativa 2"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:text="Alternativa 4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.023"
@@ -69,16 +73,18 @@
 
     <TextView
         android:id="@+id/txt_resu_resp2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="129dp"
+        android:fontFamily="@font/finger_paint"
+        android:layout_height="31dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
         android:text="Alternativa 2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintHorizontal_bias="0.016"
         app:layout_constraintStart_toEndOf="@+id/txt_resu_color2"
         app:layout_constraintTop_toBottomOf="@+id/txt_resu_resp1"
         app:layout_constraintVertical_bias="0.0" />
@@ -100,6 +106,7 @@
 
     <TextView
         android:id="@+id/txt_resu_resp"
+        android:fontFamily="@font/finger_paint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -117,19 +124,21 @@
 
     <TextView
         android:id="@+id/txt_resu_resp1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:fontFamily="@font/finger_paint"
+        android:gravity="center_vertical"
+        android:layout_width="129dp"
+        android:layout_height="31dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="27dp"
         android:text="Alternativa 1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintHorizontal_bias="0.016"
         app:layout_constraintStart_toEndOf="@+id/txt_resu_color1"
         app:layout_constraintTop_toBottomOf="@+id/txt_resu_resp"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txt_resu_color1"
@@ -148,7 +157,9 @@
 
     <TextView
         android:id="@+id/txt_resu_resu"
+
         android:layout_width="wrap_content"
+        android:fontFamily="@font/finger_paint"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -165,6 +176,7 @@
 
     <TextView
         android:id="@+id/txt_resu_info"
+        android:fontFamily="@font/finger_paint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -186,7 +198,8 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="155dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="7dp"
+        android:fontFamily="@font/finger_paint"
         android:text="pont 1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -201,7 +214,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="155dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/finger_paint"
         android:text="pont 3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -215,7 +229,8 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="155dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="27dp"
+        android:fontFamily="@font/finger_paint"
         android:text="pont 2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -231,7 +246,8 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="155dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="27dp"
+        android:fontFamily="@font/finger_paint"
         android:text="pont 4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

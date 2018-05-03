@@ -103,15 +103,6 @@ public class GerenciadorPergunta {
         perguntas.add(new Pergunta("(Caveleiros do Zodiaco) Na Saga do Inferno quais são os deuses do sono e da morte que auxiliam Hades?", 2, "Thanatos", "Morpheus", "Hypnos", "Lucifer", valores));
         valores = new ArrayList<Boolean>() {
             {
-                add(true);
-                add(false);
-                add(true);
-                add(true);
-            }
-        };
-        perguntas.add(new Pergunta("(Cavaleiros Do Zodiaco) Qual o Cavaleiro de Ouro que representa 'O pacifico carneiro que cavalga entre as estrelas' e possui poderes psiquicos?", 2, "Aioros de Sagitario", "Mú de Aries", "Saga de Gêmeos", "Manigold de Cancer", valores));
-        valores = new ArrayList<Boolean>() {
-            {
                 add(false);
                 add(true);
                 add(true);
@@ -130,10 +121,10 @@ public class GerenciadorPergunta {
         perguntas.add(new Pergunta("(Cavaleiros Do Zodiaco) Quantas armaduras do Santuario (Bronze, Prata e Ouro) provem de constelações oficiais no anime e no mangá?", 2, "17", "88", "99", "124", valores));
         valores = new ArrayList<Boolean>() {
             {
+                add(true);
                 add(false);
                 add(true);
                 add(true);
-                add(false);
             }
         };
         perguntas.add(new Pergunta("(Sword Art Online) Qual as espadas usadas por Kirito?", 3, "Excalibur", "Hasagi", "Elucidator", "Dark Repulser", valores));
